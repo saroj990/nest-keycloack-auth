@@ -51,7 +51,7 @@ export class KeycloakService {
     try {
       const response = await axios.post(url, params);
       this.accessToken = response.data.access_token;
-      this.refreshToken = refreshToken;
+      this.refreshToken = response.data.refresh_token;
       return response.data;
     } catch (error) {
       console.log('Error: ', error);
